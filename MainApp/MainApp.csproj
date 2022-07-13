@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="DryIoc" Version="5.1.0" />
+    <PackageReference Include="DryIoc.MefAttributedModel" Version="7.0.1" />
+    <PackageReference Include="DryIOcAttributes" Version="7.0.0" />
   </ItemGroup>
 
   <PropertyGroup>

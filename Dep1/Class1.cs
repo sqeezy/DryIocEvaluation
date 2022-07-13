@@ -1,5 +1,14 @@
-﻿namespace Dep1;
-public class Class1
+﻿using System.ComponentModel.Composition;
+
+namespace Dep1;
+
+public interface IDepService
 {
 
+}
+
+[Export]
+public class DepService : IDepService
+{
+    
 }
