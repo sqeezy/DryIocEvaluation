@@ -2,24 +2,26 @@
 using Dep1;
 using DryIoc;
 using DryIoc.MefAttributedModel;
+using DryIocAttributes;
 
-
-var container = new Container(rules => rules
-    .WithConcreteTypeDynamicRegistrations((serviceType, serviceKey) => true, Reuse.Singleton)).WithMef();
+// var container = new Container();
+var container = new Container().WithMefAttributedModel(); 
 
 // container.RegisterMany<MyService>(Reuse.Singleton, serviceTypeCondition: type => type.IsInterface);
 
-container.RegisterExports(new []{typeof(MyService)});
+container.RegisterExports(typeof(MyService).GetAssembly());
 
 // var service = container.Resolve<MyService>();
-var serviceAsInterface = container.Resolve<IMyService>();
-var serviceAsInterfaceToTheSide = container.Resolve<IServiceToTheSideOfMyService>();
+// var serviceAsInterface = container.Resolve<IMyService>();
+// var serviceAsInterfaceToTheSide = container.Resolve<IServiceToTheSideOfMyService>();
 var serviceAsMiddleInterface = container.Resolve<IMostSpecificInterface>();
+var serviceAsMiddleInterface2 = container.Resolve<IMostSpecificInterface>();
 
 container.Dispose();
 
-Console.WriteLine($"{serviceAsInterface == serviceAsMiddleInterface}");
-Console.WriteLine($"{serviceAsInterface.IsDisposed}");
+Console.WriteLine($"{serviceAsMiddleInterface2 == serviceAsMiddleInterface}");
+Console.WriteLine($"{serviceAsMiddleInterface.IsDisposed}");
+Console.WriteLine($"{serviceAsMiddleInterface2.IsDisposed}");
 
 
 
@@ -39,7 +41,9 @@ public interface IMostSpecificInterface : IMyService, IServiceToTheSideOfMyServi
 
 }
 
-[Export(typeof(IMyService))]
+// [Export(typeof(IMyService))]
+// [Export(typeof(IMostSpecificInterface)), SingletonReuse]
+[Export]
 public class MyService : IMostSpecificInterface
 {
     public bool IsDisposed { get; private set; }
