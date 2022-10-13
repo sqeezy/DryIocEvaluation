@@ -1,14 +1,8 @@
-﻿using System.ComponentModel.Composition;
+﻿using DryIocAttributes;
 
 namespace Dep1;
 
-public interface IDepService
-{
+public interface IDepService { }
 
-}
-
-[Export]
-public class DepService : IDepService
-{
-    
-}
+[ExportMany]
+public class DepService : IDepService { }
