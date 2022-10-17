@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainApp", "MainApp\MainApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dep1", "Dep1\Dep1.csproj", "{ECFCE98C-670A-43DC-B99A-CB0F7C56DA20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompileTimeIoc", "CompileTimeIoc\CompileTimeIoc.csproj", "{DA705409-89D0-485E-B93A-66B659125B50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{ECFCE98C-670A-43DC-B99A-CB0F7C56DA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECFCE98C-670A-43DC-B99A-CB0F7C56DA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECFCE98C-670A-43DC-B99A-CB0F7C56DA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA705409-89D0-485E-B93A-66B659125B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA705409-89D0-485E-B93A-66B659125B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA705409-89D0-485E-B93A-66B659125B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA705409-89D0-485E-B93A-66B659125B50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
